@@ -94,8 +94,11 @@ export class Employee extends Component {
             <div className="tablem4">
                 <div>
                 <NavMenu />
-                    </div>
+                </div>
                 <div>
+                    <ButtonToolbar>
+                        <Button variant='primary' onClick={this.addEmployee}>Add Employee</Button>
+                    </ButtonToolbar>
                     <MaterialTable
                         data={deps} columns={columns}
                         title="Employees"
@@ -107,9 +110,7 @@ export class Employee extends Component {
 
                    />
                 <br/>
-                <ButtonToolbar>
-                    <Button variant='primary' onClick={this.addEmployee}>Add Employee</Button>
-                    </ButtonToolbar>
+               
                 </div>
             </div>
         );

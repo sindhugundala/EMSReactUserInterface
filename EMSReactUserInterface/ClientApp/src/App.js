@@ -9,6 +9,8 @@ import NavMenu  from './components/NavMenu';
 import { EmployeeLeaves } from './components/EmployeeLeaves';
 import { Home } from './components/Home';
 import { ResetPassword } from './components/ResetPassword';
+import AccountMenu from './components/AccountMenu';
+import {Profile }from './components/Profile';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -25,6 +27,8 @@ export default class App extends Component {
                         <Route path='/editemployee/:id' component={EditEmployee} exact />
                         <Route path='/resetpassword' component={ResetPassword} exact />
                         <Route path='/employeeleaves' component={EmployeeLeaves} exact />
+                        <Route path='/accountmenu' component={AccountMenu} exact />
+                        <Route path='/profile' component={Profile} exact />
                     </Switch>
                 </div>
             </BrowserRouter>

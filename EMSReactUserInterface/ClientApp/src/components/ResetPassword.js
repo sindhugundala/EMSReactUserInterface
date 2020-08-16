@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import NavMenu from './NavMenu';
+import '../custom.css'
 
 export class ResetPassword extends Component {
     static displayName = ResetPassword.name;
@@ -30,22 +32,25 @@ export class ResetPassword extends Component {
         e.preventDefault();
     }
 
-  render () {
-    return (
-        <div className="bg fill-window">
+    render() {
+        return (
+            <div>
+            <NavMenu />
+                <div className="fill-window resetform">
             <div className="text-center">
                 <form className="form-signin" onSubmit={this.onSubmit}>
-                    <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-                    <label htmlFor="userId" className="sr-only">Email address</label>
-                    <input type="email" ref="userId" name="userId" className="form-control" placeholder="Email address" required="required" autoFocus />
+                            <label htmlFor="userId" className="sr-only">Email address</label>
+                            <input type="email" ref="userId" name="userId" className="form-control" placeholder="Email address" required="required" autoFocus /><br/>
                     <label htmlFor="oldPassword" className="sr-only">Password</label>
-                    <input type="password" name="oldPassword" ref="oldPassword" className="form-control" placeholder="Old Password" required="required" />
+                            <input type="password" name="oldPassword" ref="oldPassword" className="form-control" placeholder="Old Password" required="required" /><br/>
                     <label htmlFor="NewPassword" className="sr-only">Password</label>
+                            <input type="password" name="NewPassword" ref="NewPassword" className="form-control" placeholder="New Password" required="required" /><br/>
                     <button className="btn btn-lg btn-primary" type="submit">Reset Password</button>
 
                 </form>
             </div>
-        </div>
+                </div>
+            </div>
     );
   }
 }

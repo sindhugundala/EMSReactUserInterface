@@ -36,7 +36,8 @@ code {
     max-width: 330px;
     padding: 15px;
     margin: auto;
-    margin-top:5rem!important;
+    margin-top: 5rem !important;
+    top: 25px;
 }
     .form-signin .form-control {
         position: relative;
@@ -44,7 +45,7 @@ code {
         height: auto;
         padding: 10px;
         font-size: 16px;
-       
+        margin-bottom: 10px
     }
 .inputstyle {
     width: 50%;
@@ -84,3 +85,4 @@ code {
 .error {
     color: red;
 }
+
