@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Button, Drawer, Paper } from '@material-ui/core';
+import {IconButton } from '@material-ui/core';
 import {  AccountCircle } from '@material-ui/icons';
 import  Menu  from '@material-ui/core/Menu';
 import { MenuItem } from '@material-ui/core';
-import './NavMenu.css'
-import { Login } from './Login';
+import '../NavMenu.css'
 import { useHistory } from "react-router-dom";
-import { ResetPassword } from './ResetPassword';
+import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
 
 function AccountMenu() {
 
@@ -34,7 +33,7 @@ function AccountMenu() {
         return (
             <div>
                 <IconButton edge="start" onClick={handleClick}>
-                    <AccountCircle />
+                    <AccountCircleTwoToneIcon style={{color:'white'}} />
                 </IconButton>
                 <Menu
                     anchorEl={anchorEl}
@@ -43,7 +42,6 @@ function AccountMenu() {
                     onClose={handleClose}
                 >
                     <MenuItem onClick={handleProfile}>Profile</MenuItem>
-                    <MenuItem onClick={handleResetPassword}>Reset Password</MenuItem>
                     <MenuItem onClick={handleLogout}>Logout</MenuItem>
                 </Menu>
             </div>

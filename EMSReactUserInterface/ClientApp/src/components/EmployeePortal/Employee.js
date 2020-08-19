@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { EditEmployee } from './EditEmployee';
 import { Link } from 'react-router-dom';
-import NavMenu from './NavMenu';
+import NavMenu from '../NavMenu';
 import MaterialTable from 'material-table';
 import { IconButton } from '@material-ui/core';
 import { Icon } from '@material-ui/core';
@@ -104,7 +104,7 @@ export class Employee extends Component {
                         title="Employees"
                         columns={columns}
                         data={deps}
-                        options={{ searchField: true}}
+                        options={{ search:false,searchField: true}}
                         actions={actions}
                         style={{ overflow: 'hidden' }}
 

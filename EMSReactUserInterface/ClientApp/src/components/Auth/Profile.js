@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NavMenu from './NavMenu';
-import '../custom.css'
+import NavMenu from '../NavMenu';
 
 export class Profile extends Component {
     static displayName = Profile.name;

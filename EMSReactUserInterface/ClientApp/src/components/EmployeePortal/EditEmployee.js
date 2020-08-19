@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import NavMenu from './NavMenu';
+import NavMenu from '../NavMenu';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 export class EditEmployee extends Component {

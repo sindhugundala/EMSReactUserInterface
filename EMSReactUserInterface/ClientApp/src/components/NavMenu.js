@@ -8,7 +8,9 @@ import { withStyles } from '@material-ui/styles';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import Select from '@material-ui/core/Select';
 import './NavMenu.css'
-import  AccountMenu  from './AccountMenu';
+import AccountMenu from './Auth/AccountMenu';
+import {NavigationInMenu} from './Auth/NavigationInMenu';
+
 
 function NavMenu() {
     const [open, setOpen] = useState(false);
@@ -23,54 +25,22 @@ function NavMenu() {
         background:'black'
     });
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
      return (
          <div>
-             <AppBar style={{ background: 'rgb(4, 66, 152)',fontFamily: 'Apple Chancery, cursive'}}>
+             <AppBar style={{ fontFamily: 'Apple Chancery, cursive', background: 'darkblue' }}>
                 <Toolbar>
-                     <IconButton edge="start" onClick={handleDrawer}  color="inherit" aria-label="menu">
-                    <Menu />
-                </IconButton>
-                     <Typography variant="h6" style={{ flexGrow: 1, fontFamily: 'Apple Chancery, cursive'}}>
-                         EMPLOYEEMANAGEMENTSYSTEM
+                     <img src="logo.png" alt="" width="50" height="30" />
+                     <Typography variant="h6" style={{ flexGrow: 1, fontFamily: 'serif', color: 'yellow', fontSize: 'xx-large' }}>
+                         THINK4SOLUTIONS
                   </Typography>
-                     <AccountMenu/>
+                     <NavigationInMenu />
+                     <AccountMenu />
+                    
                 </Toolbar>
              </AppBar>
 
 
-             <Paper>
-                 <div/>
-                 <Drawer anchor='left' open={open} onClose={() => setOpen(false)}>
-                 <div style={{ width: "230px" }}>
-                         <nav className="blue darken-3" >
-                             <div className="nav-wrapper">
-                                 <ListGroup>
-                                     <ListGroup.Item>
-                                         Think4Solutions
-                                    </ListGroup.Item>
-                                     <ListGroup.Item action href="/home">
-                                         Home
-                                    </ListGroup.Item>
-                                     <ListGroup.Item action href="/employee">
-                                         Employee Portal
-                                  </ListGroup.Item>
-                                     <ListGroup.Item action href="/employeeleaves">
-                                         Leave Portal
-                                  </ListGroup.Item>
-                                 </ListGroup>
-                         </div>
-                     </nav>
-                 </div>
-                 </Drawer>
-                 </Paper>
+        
         </div>
     );
 }

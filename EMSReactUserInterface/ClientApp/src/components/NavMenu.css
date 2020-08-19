@@ -17,6 +17,17 @@ html {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 .navbar-color {
-    background: rgb(4, 66, 152);
+    background: darkblue;
     font-family: 'Apple Chancery, cursive';
+}
+.navbarT4S {
+    background: #044298;
+    color: #ff006e;
+}
+
+.lblShow {
+    text-align: left;
+    clear: both;
+    float: left;
+    margin-right: 15px;
 }

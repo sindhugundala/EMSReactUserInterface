@@ -23,6 +23,10 @@ code {
     background-color: #1b6ec2;
     border-color: #1861ac;
     width: initial;
+    background:steelblue;
+    margin-top:20px;
+    width:50%
+        
 }
 .bt-primary {
     color: #fff;
@@ -86,3 +90,10 @@ code {
     color: red;
 }
 
+.hyperlink{
+    color:orangered;
+    margin-right: 20px;
+}
+.signin {
+    font-family: 'Apple Chancery, cursive';
+}
