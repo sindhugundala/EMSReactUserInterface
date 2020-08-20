@@ -23,7 +23,6 @@ export class AddEmployee extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                EmployeeId: event.target.inputEmployeeid.value,
                 IsActive: this.state.isChecked,
                 Title: event.target.inputTitle.value,
                 FirstName: event.target.inputFirstName.value,
@@ -39,7 +38,10 @@ export class AddEmployee extends Component {
                 LinkedinURL: event.target.inputLinkedInUrl.value,
                 Experience: event.target.inputExperience.value,
                 Salary: event.target.inputSalary.value,
-                LastWorkingDay: event.target.inputLastWorkingDay.value
+                LastWorkingDay: event.target.inputLastWorkingDay.value,
+                Address: event.target.inputAddress.value,
+                State: event.target.selectItemState.value,
+                Country: event.target.selectItemCountry.value
             })
         })
             .then(response => response.json(),
@@ -68,8 +70,6 @@ export class AddEmployee extends Component {
                 <NavMenu />
                 <Link to={'/employee/'}> <ArrowBackIcon /> Back</Link><br />
                 <form className="inputstyle" onSubmit={this.handleSubmit}>
-                    <label htmlFor="inputEmployeeid">Employee ID</label>
-                    <input type="text" id="inputEmployeeid" className="form-control" placeholder="Employee Id" required="required" autoFocus />
                     <label htmlFor="inputTitle">Title</label>
                     <input type="text" id="inputTitle" className="form-control" placeholder="Title" required="required" autoFocus />
                     <label htmlFor="inputFirstName">First Name</label>
@@ -98,8 +98,20 @@ export class AddEmployee extends Component {
                     <input type="text" id="inputSalary" className="form-control" placeholder="Salary" required="required" autoFocus />
                     <label htmlFor="inputLinkedInUrl">LinkedInUrl</label>
                     <input type="text" id="inputLinkedInUrl" className="form-control" placeholder="LinkedInUrl" required="required" autoFocus />
-                    <br /><label htmlFor="selectItem">Gender</label>&nbsp;
-                      <select id="selectItem" defaultValue="Male" onChange={this.onChange}>
+                    <label htmlFor="inputAddress">Address</label>
+                    <input type="text" id="inputAddress" className="form-control" placeholder="inputAddress" required="required" autoFocus />
+                    <label htmlFor="selectItemState">State</label>&nbsp;
+                      <select id="selectItemState" className="form-control" defaultValue="Telangana" onChange={this.onChange}>
+                        <option value="Telangana">Telangana</option>
+                        <option value="AndhraPradesh">Andhra Pradesh</option>
+                    </select>
+                    <label htmlFor="selectItemCountry">Country</label>&nbsp;
+                      <select id="selectItemCountry" className="form-control" defaultValue="India" onChange={this.onChange}>
+                        <option value="IND">India</option>
+                        <option value="USA">United Sattes Of America</option>
+                    </select>
+                    <br /><label htmlFor="selectItem">Gender</label>
+                      <select id="selectItem" className="form-control" defaultValue="Male" onChange={this.onChange}>
                         <option value="M">Male</option>
                         <option value="F">Female</option>
                     </select>
@@ -111,6 +123,7 @@ export class AddEmployee extends Component {
                             type="checkbox"
                             checked={this.state.isChecked}
                             onChange={this.toggleChangeCheckbox}
+                            className="form-control"
                             />
                     </label><br/>
                     <button className="btn btn-lg bt-primary" type="submit">Submit</button>

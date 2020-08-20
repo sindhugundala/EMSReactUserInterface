@@ -12,7 +12,6 @@ export class ResetPassword extends Component {
         this.state = {
             showSubmit: false,
             users: [],
-            count: 0,
             errorMessage:''
         }
     }
@@ -42,11 +41,13 @@ export class ResetPassword extends Component {
             userId: this.refs.userId.value,
             password: this.refs.NewPassword.value,
         }
+        this.state.users.slice(Math.max(this.state.users.length - 5, 1));
+        console.log(this.state.users);
         if (this.state.users.map(x => {
 
             if (x.password === this.refs.oldPassword.value) {
                 this.updatePassword(newPassword);
-                this.setState({ count: 1, errorMessage: '' });
+                this.setState({  errorMessage: '' });
             }
             
         }))

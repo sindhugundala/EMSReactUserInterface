@@ -2,75 +2,100 @@ import React, { Component } from 'react';
 import NavMenu from './NavMenu';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import green from '@material-ui/core/colors/green';
+import red from '@material-ui/core/colors/red';
+import { useHistory } from "react-router";
 
+const useStyles = makeStyles({
+    root: {
+        minWidth: 10,
+        backgroundColor: green[500]
+    },
+    bullet: {
+        display: 'inline-block',
+        margin: '0 2px',
+        transform: 'scale(0.8)',
+    },
+    title: {
+        fontSize: 14,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+});
+const uStyle = makeStyles({
+    root: {
+        minWidth: 10,
+        backgroundColor: red[500]
+    },
+    bullet: {
+        display: 'inline-block',
+        margin: '0 2px',
+        transform: 'scale(0.8)',
+    },
+    title: {
+        fontSize: 14,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+});
 
-export class Home extends Component {
-    static displayName = Home.name;
+ function Home (props){
+  
+     const classes = useStyles();
+     const c = uStyle();
+     const history = useHistory();
+   
+     const handleLeaves = (event) => {
 
-    handleEmployees = () => {
-
-        this.props.history.push('/employee');
+        props.history.push('/employeeleaves');
     }
-    handleLeaves = () => {
-
-        this.props.history.push('/employeeleaves');
-    }
-
-    render() {
+     const handleEmployees = (event) => {
+         props.history.push('/employee');
+     }
+   
       return (
 
           <div className="tablem4"
               style={{ display: 'flex' }}>
             <NavMenu />
 
-              <Card style={{ maxWidth: '360px',  marginRight: 30, flex: 1 }} >
-                <CardActionArea>
-                      <CardMedia 
+              <Card className={c.root} style={{ maxWidth: '350px' }} onClick={handleEmployees} >
+                  <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'Apple Chancery, cursive' }} >
+                          Employeemanagementsystem
+          </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p" onClick={handleEmployees}>
+                          Employee Leave management system is a comprehensive system that allows the management to keep a track of all the employees in the organization.
+          </Typography>
+                  </CardContent>
+                  <CardActions>
+                      <Button size="small">Click to Navigate</Button>
+                  </CardActions>
+              </Card> 
 
-                          component="img"
-                          height="260"
-                          image={require("./e1.jfif")}
-                          title="Employee Portal"
-                          onClick={this.handleEmployees}
-                    />
-                    <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'Apple Chancery, cursive' }} onClick={this.handleLeaves}>
-                            Employeemanagementsystem
+              <Card className={classes.root} style={{ maxWidth: '350px', marginLeft: '50px' }} onClick={handleLeaves}>
+                  <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'Apple Chancery, cursive' }} onClick={handleLeaves}>
+                          Leavemanagementsystem
           </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p" onClick={this.handleLeaves}>
-                              Employee Leave management system is a comprehensive system that allows the management to keep a track of all the employees in the organization.
+                      <Typography variant="body2" color="textSecondary" component="p" onClick={handleLeaves}>
+                          Leave Management System allows organizations to manage employee time-off, setup leave policies, and automate leave requests approval
           </Typography>
-                    </CardContent>
-                </CardActionArea>
-               
-              </Card>
-
-              <Card style={{ marginRight: 30, flex: 1, maxWidth: '360px'}} >
-                  <CardActionArea>
-                      <CardMedia
-                          component="img"
-                          height="260"
-                          image={require("./Leaves.jfif")}
-                          title="Leaves Portal"
-                          onClick={this.handleLeaves}
-                      />
-                      <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'Apple Chancery, cursive' }} onClick={this.handleLeaves}>
-                              Leavemanagementsystem
-          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p" onClick={this.handleLeaves}>
-                              Leave Management System allows organizations to manage employee time-off, setup leave policies, and automate leave requests approval
-          </Typography>
-                      </CardContent>
-                  </CardActionArea>
-
+                  </CardContent>
+                  <CardActions>
+                      <Button size="small">Click to Navigate</Button>
+                  </CardActions>
               </Card>
         
       </div>
     );
-  }
+  
 }
+
+export default Home;

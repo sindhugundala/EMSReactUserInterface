@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
 import {Nav}  from 'react-bootstrap';
-import { NavigationInMenu } from './NavigationInMenu';
+import  NavigationInMenu  from './NavigationInMenu';
 import { EmployeeLeaves } from '../LeavePortal/EmployeeLeaves';
+import { Profile } from './Profile';
 
 export class Login extends Component {
     static displayName = Login.name;
@@ -27,7 +28,7 @@ export class Login extends Component {
         }).then(response => {
             if (response.data) {
                 this.setState({ username: loginDetails.userId });
-              
+
                 this.props.history.push('/home');
                
             }
@@ -47,6 +48,7 @@ export class Login extends Component {
 
     handleSubmitClick = () => {
         this.props.history.push("/home");
+
     }
    
     //componentWillUnmount() {

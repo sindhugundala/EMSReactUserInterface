@@ -9,7 +9,7 @@ import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import Select from '@material-ui/core/Select';
 import './NavMenu.css'
 import AccountMenu from './Auth/AccountMenu';
-import {NavigationInMenu} from './Auth/NavigationInMenu';
+import NavigationInMenu from './Auth/NavigationInMenu';
 
 
 function NavMenu() {

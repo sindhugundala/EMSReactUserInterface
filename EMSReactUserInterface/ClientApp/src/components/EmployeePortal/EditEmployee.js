@@ -41,7 +41,10 @@ export class EditEmployee extends Component {
                     linkedinURL: data.linkedinURL,
                     experience: data.experience,
                     salary: data.salary,
-                    lastWorkingDay: data.lastWorkingDay
+                    lastWorkingDay: data.lastWorkingDay,
+                    address1: data.address1,
+                    state: data.state,
+                    country: data.country
                 }));
     }
 
@@ -91,7 +94,10 @@ export class EditEmployee extends Component {
             linkedinURL: this.refs.linkedinURL.value,
             experience: this.refs.experience.value,
             salary: this.refs.salary.value,
-            lastWorkingDay: this.refs.lastWorkingDay.value
+            lastWorkingDay: this.refs.lastWorkingDay.value,
+            address1: this.refs.address1.value,
+            state: this.refs.state.value,
+            country: this.refs.country.value
         }
         this.editEmployee(newEmployee);
         e.preventDefault();
@@ -133,8 +139,20 @@ export class EditEmployee extends Component {
                   <input type="text" className="form-control" placeholder="Salary" value={this.state.salary} onChange={this.hadleInputChange} name="salary" ref="salary" required="required" autoFocus />
                   <label htmlFor="linkedinURL" className="input-field">LinkedInUrl</label>
                   <input type="text" className="form-control" placeholder="LinkedInUrl" value={this.state.linkedinURL} name="linkedinURL" ref="linkedinURL" onChange={this.hadleInputChange} required="required" autoFocus />
+                  <label htmlFor="address1">Address</label>
+                  <input type="text" className="form-control" placeholder="address1" value={this.state.address1} name="address1" ref="address1" onChange={this.hadleInputChange} required="required" autoFocus />
+                  <label htmlFor="state">State</label>&nbsp;
+                      <select className="form-control" name="state" ref="state" value={this.state.state} onChange={this.hadleInputChange}>
+                      <option value="Telangana">Telangana</option>
+                      <option value="AndhraPradesh">Andhra Pradesh</option>
+                  </select>
+                  <label htmlFor="country">Country</label>&nbsp;
+                      <select className="form-control" name="country" ref="country" value={this.state.country} onChange={this.hadleInputChange}>
+                      <option value="IND">India</option>
+                      <option value="USA">United Sattes Of America</option>
+                  </select>
                   <br /><label>Gender</label>&nbsp;
-                      <select defaultValue="option1" name="maritalStatus" ref="maritalStatus" value={this.state.maritalStatus} onChange={this.hadleInputChange}>
+                      <select  name="maritalStatus" ref="maritalStatus" value={this.state.maritalStatus} onChange={this.hadleInputChange}>
                       <option value="M">Male</option>
                       <option value="F">Female</option>
                   </select>

@@ -7,12 +7,12 @@ import { AddEmployee } from './components/EmployeePortal/AddEmployee';
 import { EditEmployee } from './components/EmployeePortal/EditEmployee';
 import NavMenu  from './components/NavMenu';
 import {EmployeeLeaves } from './components/LeavePortal/EmployeeLeaves';
-import { Home } from './components/Home';
+import  Home  from './components/Home';
 import { ResetPassword } from './components/Auth/ResetPassword';
 import AccountMenu from './components/Auth/AccountMenu';
 import { Profile } from './components/Auth/Profile';
 import { ForgotPassword } from './components/Auth/ForgotPassword';
-import { NavigationInMenu } from './components/Auth/NavigationInMenu';
+import NavigationInMenu  from './components/Auth/NavigationInMenu';
 
 export default class App extends Component {
     static displayName = App.name;

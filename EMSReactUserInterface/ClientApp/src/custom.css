@@ -28,11 +28,13 @@ code {
     width:50%
         
 }
+
 .bt-primary {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
     margin-top: 10px;
+    background: steelblue;
 }
 
 .form-signin {
@@ -96,4 +98,7 @@ code {
 }
 .signin {
     font-family: 'Apple Chancery, cursive';
+}
+.profileInputFileds {
+    margin-left: 100px;
 }
