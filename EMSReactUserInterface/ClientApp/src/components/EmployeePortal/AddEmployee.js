@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import NavMenu from '../NavMenu';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 export class AddEmployee extends Component {
@@ -67,7 +66,6 @@ export class AddEmployee extends Component {
     render() {
         return (
             <div className="tablem4">
-                <NavMenu />
                 <Link to={'/employee/'}> <ArrowBackIcon /> Back</Link><br />
                 <form className="inputstyle" onSubmit={this.handleSubmit}>
                     <label htmlFor="inputTitle">Title</label>

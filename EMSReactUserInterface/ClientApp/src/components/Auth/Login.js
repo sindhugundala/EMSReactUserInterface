@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
 import {Nav}  from 'react-bootstrap';
-import  NavigationInMenu  from './NavigationInMenu';
 import { EmployeeLeaves } from '../LeavePortal/EmployeeLeaves';
 import { Profile } from './Profile';
 
@@ -29,7 +28,7 @@ export class Login extends Component {
             if (response.data) {
                 this.setState({ username: loginDetails.userId });
 
-                this.props.history.push('/home');
+                this.props.history.push('/home/' + loginDetails.userId );
                
             }
             this.setState({ errorMessage: 'Your login credentials could not be verified, please try again' })
@@ -47,7 +46,7 @@ export class Login extends Component {
     }
 
     handleSubmitClick = () => {
-        this.props.history.push("/home");
+        this.props.history.push("/home/" + this.refs.userId.value);
 
     }
    
@@ -76,7 +75,6 @@ export class Login extends Component {
                         <button className="btn btn-lg btn-primary" type="submit">Login</button>
                         {this.state.errorMessage &&
                             <label className="mb-3 font-weight-normal error"> {this.state.errorMessage} </label>}
-                        {this.state.username && <NavigationInMenu value={this.state.username} />}
                     </form>
                 </div>
             </div>

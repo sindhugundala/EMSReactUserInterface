@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NavMenu from '../NavMenu';
+
 
 
 export class ResetPassword extends Component {
@@ -63,7 +63,7 @@ export class ResetPassword extends Component {
 
         return (
                     <div>
-                        <NavMenu />
+                      
                     <div className="fill-window resetform">
                         <div className="text-center">
 

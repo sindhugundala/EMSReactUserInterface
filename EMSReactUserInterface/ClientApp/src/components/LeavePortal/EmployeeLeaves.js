@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import NavMenu from '../NavMenu';
 import MaterialTable from 'material-table';
 
 import { withStyles, makeStyles } from '@material-ui/core/styles';
@@ -32,7 +31,6 @@ export class EmployeeLeaves extends Component {
 
         return (
             <div>
-                <NavMenu />
                 <label style={{ marginRight: '60%' }} className="tablem4" >Employee ID: {this.props.title}</label>
                 <img src={require('./leavesimg1.jfif')} width="400" height="250" style={{ marginLeft: '60%', marginTop: '2.0rem !important'}} />
                 <div className="tablem4">

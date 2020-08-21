@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import NavMenu from '../NavMenu';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 export class EditEmployee extends Component {
@@ -106,7 +105,6 @@ export class EditEmployee extends Component {
     render() {
       return (
           <div className="tablem4">
-              <NavMenu />
               <Link to={'/employee/'}> <ArrowBackIcon /> Back</Link><br />
               <form className="inputstyle" onSubmit={this.onSubmit.bind(this)}>
                   <label htmlFor="employeeId" className="input-field">Employee ID</label>

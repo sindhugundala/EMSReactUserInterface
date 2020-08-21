@@ -3,7 +3,6 @@ import { Table } from 'react-bootstrap';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { EditEmployee } from './EditEmployee';
 import { Link } from 'react-router-dom';
-import NavMenu from '../NavMenu';
 import MaterialTable from 'material-table';
 import { IconButton } from '@material-ui/core';
 import { Icon } from '@material-ui/core';
@@ -114,12 +113,11 @@ export class Employee extends Component {
         return (
             <div className="tablem4">
                 <div>
-                <NavMenu />
                 </div>
                 <div>
                     <button className="btn btn-lg bt-primary" onClick={this.addEmployee}>Add Employee</button><br />&nbsp;
                     <MaterialTable className="classes.root"
-                        data={deps} columns={columns}
+                        data={deps} columns={styles(columns)}
                         title="Employees"
                         options={{ search: false, exportButton:true }}
                         actions={actions}
